@@ -1,0 +1,9 @@
+# 1 Month for all your static assets
+ <filesMatch ".(ico|pdf|svg|flv|jpg|jpeg|png|gif|js|css|swf)$">
+ Header set Cache-Control "max-age=2592000, public"
+ </filesMatch>
+  
+ # 4 HOURS for your real articles files
+ <filesMatch ".(html|htm)$">
+ Header set Cache-Control "max-age=14400, must-revalidate"
+ </filesMatch>

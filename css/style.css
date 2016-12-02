@@ -1,0 +1,18 @@
+ul.tab_items {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+ul.tab_items li.active {
+  opacity: .5; }
+
+.tab_items li img {
+  display: block;
+  width: 100%; }
+
+.tab_content {
+  text-align: center;
+  padding: 50px 0px; }
