@@ -29,13 +29,21 @@
 
 		content.children().not(':eq(0)').css('display', 'none');
 
+		// Set variable to check if a content fade is already in progress
+
+		var fadeInProgress;
+
 		// Click function on a specific tab
 
 		tabItem.click(function(){
 
-			// Only trigger the tab change if the clicked tab isn't already active.
+			// Only trigger the tab change if the clicked tab isn't already active or another fade isn't in progress.
 
-			if(!$(this).hasClass('active')) {
+			if((!$(this).hasClass('active')) && (!fadeInProgress)) {
+
+				// Indicate that a fade is in progress now that a tab has been clicked.
+
+				fadeInProgress = true;
 
 				// Save the name of the tab
 
@@ -56,7 +64,12 @@
 
 					$(that).find('#' + tabName).fadeIn(settings.speed, function(){
 						$(this).addClass('active');
+						
+						// Indicate that the fade is done and another tab can now be clicked.
+
+						fadeInProgress = false;
 					});
+
 				});
 			}
 
