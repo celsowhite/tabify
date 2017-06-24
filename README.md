@@ -62,6 +62,6 @@ Currently there is only one setting, speed. More to come!
 Demo
 ===
 
-[Basic Demo](http://celsowhite.com/tabify)
+[Basic Demo](https://celsowhite.github.io/tabify/)
 
 [See it in action on my portfolio homepage](http://celsowhite.com)
