@@ -74,6 +74,33 @@
 			}
 
 		});
+		
+		// Activate Tab
+        // Method that accepts a tabIndex as a parameter and will activate the appropriate tab.
+        
+        $.fn.tabify.activateTab = function(tabIndex) {
+            
+            // Change the active tab
+
+            that.find('.tab_items li.active').removeClass('active');
+            
+            $(that).find('.tab_items > li:eq(' + tabIndex + ')').addClass('active');
+                        
+            // Change the active content
+
+            $(that).find('.tab_content .active').fadeOut(settings.speed, function(){
+                
+                $(this).removeClass('active');
+
+                // Fade in the tab content
+                                
+                $(that).find('.tab_content > div:eq(' + tabIndex + ')').fadeIn(settings.speed, function(){
+                    $(this).addClass('active');
+                });
+
+            });
+            
+        }
 
 	};
 }(jQuery));
